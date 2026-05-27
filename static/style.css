@@ -1,0 +1,105 @@
+/* ── Reset e base ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --verde:    #22c55e;
+    --azul:     #3b82f6;
+    --cinza:    #1e293b;
+    --fundo:    #0f172a;
+    --card:     #1e293b;
+    --texto:    #f1f5f9;
+    --subtexto: #94a3b8;
+    --borda:    #334155;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+/* ── Navbar ───────────────────────────────────────────── */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--card);
+    border-bottom: 1px solid var(--borda);
+}
+.nav-brand { font-size: 1.25rem; font-weight: 700; color: var(--verde); }
+.nav-links a { color: var(--subtexto); text-decoration: none; margin-left: 1.5rem; }
+.nav-links a:hover { color: var(--texto); }
+.btn-sair { color: #f87171 !important; }
+
+/* ── Container ────────────────────────────────────────── */
+.container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* ── Cards de resumo ─────────────────────────────────── */
+.cards-resumo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.card {
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.card-label { font-size: 0.85rem; color: var(--subtexto); }
+.card-valor  { font-size: 1.75rem; font-weight: 700; color: var(--verde); }
+
+/* ── Tabela de ativos ────────────────────────────────── */
+.ativos h2 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--subtexto); }
+
+.tabela-ativos {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.tabela-ativos th {
+    background: #273449;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.8rem;
+    color: var(--subtexto);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+.tabela-ativos td {
+    padding: 0.85rem 1rem;
+    border-top: 1px solid var(--borda);
+    font-size: 0.95rem;
+}
+.tabela-ativos tr:hover td { background: #243044; }
+
+/* ── Badges de tipo ──────────────────────────────────── */
+.badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+.badge-acao      { background: #1d4ed8; color: #bfdbfe; }
+.badge-fii       { background: #7c3aed; color: #ddd6fe; }
+.badge-renda_fixa { background: #15803d; color: #bbf7d0; }
+.badge-cripto    { background: #b45309; color: #fde68a; }
+
+/* ── Footer ──────────────────────────────────────────── */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--subtexto);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--borda);
+    margin-top: 3rem;
+}

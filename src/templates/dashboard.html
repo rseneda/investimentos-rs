@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block titulo %}Dashboard — Minha Carteira{% endblock %}
+
+{% block conteudo %}
+<div class="dashboard">
+
+    <!-- Resumo geral -->
+    <section class="cards-resumo">
+        <div class="card">
+            <span class="card-label">Total Investido</span>
+            <span class="card-valor">R$ {{ total_investido }}</span>
+        </div>
+        <div class="card">
+            <span class="card-label">Total de Ativos</span>
+            <span class="card-valor">{{ total_ativos }}</span>
+        </div>
+    </section>
+
+    <!-- Lista de ativos -->
+    <section class="ativos">
+        <h2>Meus Ativos</h2>
+        <table class="tabela-ativos">
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Qtd</th>
+                    <th>Preço Médio</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ativo in ativos %}
+                <tr>
+                    <td><strong>{{ ativo.ticker }}</strong></td>
+                    <td>{{ ativo.nome }}</td>
+                    <td><span class="badge badge-{{ ativo.tipo }}">{{ ativo.tipo }}</span></td>
+                    <td>{{ ativo.quantidade }}</td>
+                    <td>R$ {{ ativo.preco_medio }}</td>
+                    <td>R$ {{ ativo.valor_total() }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+</div>
+{% endblock %}

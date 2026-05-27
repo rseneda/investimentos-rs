@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Carteira de Investimentos{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">💰 InvestRS</div>
+        <div class="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/auth/login" class="btn-sair">Sair</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block conteudo %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>InvestRS &copy; 2025 — Carteira inteligente em Rust</p>
+    </footer>
+</body>
+</html>
